@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+</head>
+<body>
+  <script>
+    // var a=105
+    // if(a%2 ==0){
+    //   documrnt.write("Num is even")
+    // }
+    // else {
+    //   document.write("Num is odd")
+    // }
+    var a = 10;
+    var b = 20;
+    var c = 30;
+
+    var second;
+
+    if ((a > b && a < c) || (a > c && a < b)) {
+      second = a;
+    } 
+    else if ((b > a && b < c) || (b > c && b < a)) {
+      second = b;
+    } 
+    else {
+      second = c;
+    }
+
+    document.write("The second largest element is " + second);
+
+  </script>
+  
+</body>
+</html>
