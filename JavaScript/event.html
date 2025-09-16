@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
   <title>Document</title>
-  <style>
+  <!-- <style>
     #adi{
       height: 300px;
       width: 300px;
@@ -16,17 +16,34 @@
       cursor: pointer;
 
     }
-  </style>
+  </style> -->
 </head>
-<body>
-  <div id="adi">
+<body id="adi">
+
+
+   <!-- <div id="adi">
       <button id="clickButton" onclick="abes()">Click Me</button>
       <p id="aaa"></p>
   </div>
   <script>
     function abes(){
       document.getElementById("aaa").innerHTML = "<h1>HELLO</h1>"
-    }
-  </script>
+    } 
+  </script> -->
+<script>
+  function red(){
+    document.getElementById("adi").style.backgroundColor="red";
+  }
+
+  function green(){
+    document.getElementById("adi").style.backgroundColor="green";
+  }
+  function blue(){
+    document.getElementById("adi").style.backgroundColor="blue";
+  }
+</script>
+  <button onClick="red()">Red</button>
+  <button onClick="green()">Green</button>
+  <button onClick="blue()">Blue</button>
 </body>
 </html>
