@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Document</title>
+  <style>
+    #adi{
+      height: 300px;
+      width: 300px;
+      background-color: aquamarine;
+      border: 5px solid black;
+    }
+    #clickButton{
+      cursor: pointer;
+
+    }
+  </style>
+</head>
+<body>
+  <div id="adi">
+      <button id="clickButton" onclick="abes()">Click Me</button>
+      <p id="aaa"></p>
+  </div>
+  <script>
+    function abes(){
+      document.getElementById("aaa").innerHTML = "<h1>HELLO</h1>"
+    }
+  </script>
+</body>
+</html>
