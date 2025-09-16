@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    .container{
+        margin-top: 50px;
+        height: 100vh;
+        width: 100vw;
+        display: flex;
+        justify-content: space-around;
+    }
+    #card{
+        height: 400px;
+        width: 400px;
+        border: 2px solid black;
+        background-color: rgb(182, 182, 209);
+    }
+    #c{
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-around;
+    }
+    .logo img{
+        height: 50px;
+        width: 50px;
+    }
+    .btn{
+        display: flex;
+        justify-content: space-around;
+        height: 150px;
+        width: 400px;
+        margin-top: 100px;
+    }
+    #counter{
+        margin-top: 50px;
+    }
+    .btn button{
+        height: 50px;
+        width: 80px;
+    }
+
+    .card2{
+        height: 380px;
+        width: 380px;
+        border: 2px solid black;
+    }
+    #btn{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .card2 img{
+        height: 280px;
+        width: 100%;
+        border: 2px solid black;
+    }
+</style>
+
+</head>
+<body>
+
+    <div class="container">
+        <!-- Box 1 with Hide -->
+        <div class="card2" id="box-1">
+            <div id="img1">
+                <img id="image1" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTng1SD0h2twUzTLLlPJT75IhJ-nWL4HJAcCA&s" alt="">
+            </div>
+            <div id="btn1">
+                <button onclick="hideImage()" id="hideBtn">HIDE</button>
+            </div>
+        </div>
+
+        <!-- Counter App -->
+        <div id="card">
+            <div id="c">
+                <div class="logo">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQdSHA8V_9FyUABR7V36xCQbyj2_xUO4-Radw&s" alt="">
+                </div>
+                <h1>COUNTER APP</h1>  
+            </div>
+
+            <center> 
+                <div id="counter">0</div>
+            </center>
+
+            <div class="btn">
+                <button onclick="add()"><h1>+</h1></button>
+                <button onclick="sub()"><h1>-</h1></button>
+            </div>
+        </div>
+
+        <!-- Box 2 with Change -->
+        <div class="card2" id="box-2">
+            <div id="img2">
+                <img id="image2" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTng1SD0h2twUzTLLlPJT75IhJ-nWL4HJAcCA&s" alt="">
+            </div>
+            <div id="btn2">
+                <button onclick="changeImage()" id="changeBtn">CHANGE</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Counter functions
+        var i=0;
+        function add(){
+            if(i==10){
+                alert("maximum limit");
+            }
+            else{
+                i++;
+            }
+            document.getElementById("counter").innerHTML=i;
+        }
+        function sub(){
+            if(i==0){
+                alert("minimum limit");
+            }
+            else{
+                i--;
+            }
+            document.getElementById("counter").innerHTML=i;
+        }
+
+        // Hide image toggle
+        var hidden = false;
+        function hideImage(){
+            let img = document.getElementById("image1");
+            let btn = document.getElementById("hideBtn");
+            if(!hidden){
+                img.style.display = "none";
+                btn.innerText = "SHOW";
+                hidden = true;
+            }else{
+                img.style.display = "block";
+                btn.innerText = "HIDE";
+                hidden = false;
+            }
+        }
+
+        // Change image toggle to image3.jpg
+        var changed = false;
+        function changeImage(){
+            let img = document.getElementById("image2");
+            if(!changed){
+                img.src = "image3.jpg"; // your image3.jpg file
+                changed = true;
+            }else{
+                img.src = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTng1SD0h2twUzTLLlPJT75IhJ-nWL4HJAcCA&s"; // original
+                changed = false;
+            }
+        }
+    </script>
+</body>
+</html>
