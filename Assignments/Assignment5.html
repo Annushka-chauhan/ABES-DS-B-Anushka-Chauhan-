@@ -1,0 +1,99 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Counter App</title>
+  <style>
+    #main {
+      margin-top: 150px;
+      margin-left: 100px;
+      height: 490px;
+      width: 400px;
+      background-color: lightgoldenrodyellow;
+      border: 5px solid rgb(215, 159, 167);
+      display: flex;
+      flex-direction: column;
+      align-items: center; 
+      padding-top: 20px;
+      border-radius: 15px;
+    }
+    #counter {
+      width: 80px;
+      height: 80px;
+      border-radius: 200px;
+    }
+
+    
+    .heading {
+      margin: 10px 0;
+      font-size: 24px;
+    }
+
+    
+    #Number {
+      font-size: 40px;
+      font-weight: bold;
+      margin: 30px 0;
+    }
+
+    .button {
+      display: flex;
+      flex-direction: row;
+      gap: 15px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 18px;
+      background-color: rgb(215, 159, 167);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background-color: rgb(200, 130, 140);
+    }
+  </style>
+</head>
+<body>
+  <div id="main">
+    
+    <img id="counter" src="counter.png" alt="Counter Logo">
+    <h2 class="heading">Counter App</h2>
+
+    
+    <p id="Number">0</p>
+    <div class="button">
+      <button onclick="increment()">+</button>
+      <button onclick="decrement()">-</button>
+    </div>
+  </div>
+
+  <script>
+    let count = 0;
+    const numberEl = document.getElementById('Number');
+
+    function increment() {
+      if (count >= 10) {
+        alert("Count cannot go above 10!");
+      } else {
+        count++;
+        numberEl.textContent = count;
+      }
+    }
+
+    function decrement() {
+      if (count <= 0) {
+        alert("Count cannot go below 0!");
+      } else {
+        count--;
+        numberEl.textContent = count;
+      }
+    }
+  </script>
+</body>
+</html>
