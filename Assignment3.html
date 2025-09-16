@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Card Design</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #faf0f0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      margin: 0;
+    }
+
+    #items {
+      display: flex;
+      flex-direction: row;
+      justify-content: center;
+      gap: 20px; 
+    }
+
+    .same {
+      height: 350px;
+      width: 250px;
+      background-color: white;
+      font-size: 18px;
+      margin: 10px;
+      padding: 20px;
+      text-align: center;
+
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between; /* space between image/text/buttons */
+      align-items: center;
+
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    }
+
+    .same img {
+      width: 200px;
+      height: 150px;
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 10px;
+    }
+
+    .btn {
+      padding: 8px 14px;
+      font-size: 14px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+
+    .cart {
+      background-color: #007bff;
+      color: white;
+    }
+    
+
+    .buy {
+      background-color: #28a745;
+      color: white;
+    }
+    
+  </style>
+</head>
+<body>
+  <div id="items">
+    <div class="same">
+      <img src="image.png" alt="Pizza">
+      <p><b> Pizza</b></p>
+      <div class="btn-group">
+        <button class="btn cart">Add to Cart</button>
+        <button class="btn buy">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="same">
+      <img src="coldDrink.jpeg" alt="Cold Drink">
+      <p><b>Cold Drink</b></p>
+      <div class="btn-group">
+        <button class="btn cart">Add to Cart</button>
+        <button class="btn buy">Buy Now</button>
+      </div>
+    </div>
+
+    <div class="same">
+      <img src="Burger.jpeg" alt="Burger">
+      <p><b>Burger</b></p>
+      <div class="btn-group">
+        <button class="btn cart">Add to Cart</button>
+        <button class="btn buy">Buy Now</button>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
