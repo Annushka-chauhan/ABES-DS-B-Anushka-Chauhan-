@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Student Data by Branch</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f8f9fa;
+      display: flex;
+      justify-content: center;
+      padding: 20px;
+    }
+    .container {
+      background: #e9dcdc;
+      padding: 20px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      width: 600px;
+    }
+    h1 {
+      text-align: center;
+      color: #333;
+    }
+    .branch {
+      margin-top: 20px;
+      padding: 15px;
+      border-radius: 8px;
+      background: #e9ecef;
+    }
+    .branch h2 {
+      margin: 0 0 10px 0;
+      font-size: 18px;
+      color: #444;
+    }
+    .student-card {
+      background: #fefefe;
+      border: 1px solid #ddd;
+      padding: 10px 15px;
+      border-radius: 6px;
+      margin: 8px 0;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Student Details (Grouped by Branch)</h1>
+    <div id="studentData"></div>
+  </div>
+  <script>
+    class Student {
+      constructor(name, age, rollno, branch) {
+        this.name = name;
+        this.age = age;
+        this.rollno = rollno;
+        this.branch = branch;
+      }
+    }
+
+    const students = [
+      new Student("Aditya", 24, 101, "CSE"),
+      new Student("Rohan", 23, 102, "ECE"),
+      new Student("Sohan", 25, 103, "CSE"),
+      new Student("Priya", 22, 104, "ECE"),
+      new Student("Neha", 23, 105, "ME")
+    ];
+
+   
+    const grouped = {};
+    students.forEach(student => {
+      if (!grouped[student.branch]) {
+        grouped[student.branch] = [];
+      }
+      grouped[student.branch].push(student);
+    });
+
+    
+    let htmlContent = "";
+    for (const branch in grouped) {
+      htmlContent += `<div class="branch"><h2>Branch: ${branch}</h2>`;
+      grouped[branch].forEach(st => {
+        htmlContent += `
+          <div class="student-card">
+            <strong>Name:</strong> ${st.name}<br>
+            <strong>Age:</strong> ${st.age}<br>
+            <strong>Roll No:</strong> ${st.rollno}
+          </div>
+        `;
+      });
+      htmlContent += `</div>`; // close branch div
+    }
+
+    document.getElementById("studentData").innerHTML = htmlContent;
+  </script>
+</body>
+</html>
