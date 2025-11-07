@@ -1,0 +1,8 @@
+#Navbar{
+    background-color: rgb(218, 159, 159);
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    border: 2px solid black;
+    justify-content: center;
+}
