@@ -13,36 +13,47 @@
 // Server receives req
 // Server sends res
 // Browser displays response
-const http = require('http');
- const myServer = http.createServer((req, res)=>{
-   if (req.url === '/favicon.ico') return res.end();
+// const http = require('http');
+//  const myServer = http.createServer((req, res)=>{
+//    if (req.url === '/favicon.ico') return res.end();
 
-    console.log('Request URL:', req.url);
+//     console.log('Request URL:', req.url);
 
-    res.writeHead(200, { 'Content-Type': 'text/html' });
+//     res.writeHead(200, { 'Content-Type': 'text/html' });
 
-    if (req.url === '/') {
-        res.end('<h1>Home Page</h1><p>Welcome to my website</p>');
-    } 
-    else if (req.url === '/about') {
-        res.end('<h1>About Page</h1><p>This is the about page</p>');
-    } 
-    else if (req.url === '/contact') {
-        res.end('<h1>Contact Us</h1><p>Email: contact@example.com</p>');
-    } 
-    else {
-        res.writeHead(404, { 'Content-Type': 'text/html' });
-        res.end('<h1>404</h1><p>Page Not Found</p>');
-    }s.end('This is my first Server');
-})
-myServer.listen(8000,()=>console.log('server is run'));
+//     if (req.url === '/') {
+//         res.end('<h1>Home Page</h1><p>Welcome to my website</p>');
+//     } 
+//     else if (req.url === '/about') {
+//         res.end('<h1>About Page</h1><p>This is the about page</p>');
+//     } 
+//     else if (req.url === '/contact') {
+//         res.end('<h1>Contact Us</h1><p>Email: contact@example.com</p>');
+//     } 
+//     else {
+//         res.writeHead(404, { 'Content-Type': 'text/html' });
+//         res.end('<h1>404</h1><p>Page Not Found</p>');
+//     }s.end('This is my first Server');
+// })
+// myServer.listen(8000,()=>console.log('server is run'));
 
 
-const fs= require('fs');
-//fs.writeFileSync("./abes.txt","Hello Abes ");
+ const fs= require('fs');
+// //fs.writeFileSync("./abes.txt","Hello Abes ");
 
- const result = fs.readFileSync("./abes.txt","utf-8");
- console.log(result);
+//  const result = fs.readFileSync("./abes.txt","utf-8");
+//  console.log(result);
 
- const ans= fs.readFileSync("./ds-b.txt","utf-8");
- console.log(ans);
+//  const ans= fs.readFileSync("./ds-b.txt","utf-8");
+//  console.log(ans);
+
+ //Async always work when is callback (compulsory )
+ fs.writeFile("./abes.txt","We Code and Run it ",() => { });
+ const result = fs.readFile("./abes.txt", "utf-8",(err,result) => {
+  if(err){
+    console.log("Error",err);
+  }
+  else {
+    console.log(result); 
+  }
+ })
