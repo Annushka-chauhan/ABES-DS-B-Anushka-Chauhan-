@@ -38,6 +38,9 @@
 // myServer.listen(8000,()=>console.log('server is run'));
 
 
+
+//FILE SYSTEM
+
  const fs= require('fs');
 // //fs.writeFileSync("./abes.txt","Hello Abes ");
 
@@ -70,12 +73,27 @@
 //   }
 //  })
  // ./ means current directory
- fs.appendFileSync("./abes.txt",`PhD`);
-fs.appendFile("./A1.txt" ,`Anushka`,"utf-8",  (err) => {
-    if(err){
-      console.log("Error", err);
-    }
-    else {
-      console.log("File append SuccessFully");
-    }
- })
+
+
+ //APPEND FILE
+//  fs.appendFileSync("./abes.txt",`PhD`);
+// fs.appendFile("./A1.txt" ,`Anushka`,"utf-8",  (err) => {
+//     if(err){
+//       console.log("Error", err);
+//     }
+//     else {
+//       console.log("File append SuccessFully");
+//     }
+//  })
+
+
+//COPY FILE CONTENT
+fs.cpSync("./abes.txt","./A1.txt")
+fs.cp("./abes.txt" ,"./ds-b.txt", (err) =>{
+  if(err){
+    console.log("Error", err);
+  }
+  else {
+    console.log("Copied Successfully through async");
+  }
+})
