@@ -36,3 +36,13 @@ const http = require('http');
     }s.end('This is my first Server');
 })
 myServer.listen(8000,()=>console.log('server is run'));
+
+
+const fs= require('fs');
+//fs.writeFileSync("./abes.txt","Hello Abes ");
+
+ const result = fs.readFileSync("./abes.txt","utf-8");
+ console.log(result);
+
+ const ans= fs.readFileSync("./ds-b.txt","utf-8");
+ console.log(ans);
