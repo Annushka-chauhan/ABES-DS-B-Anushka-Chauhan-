@@ -48,12 +48,34 @@
 //  console.log(ans);
 
  //Async always work when is callback (compulsory )
- fs.writeFile("./abes.txt","We Code and Run it ",() => { });
- const result = fs.readFile("./abes.txt", "utf-8",(err,result) => {
-  if(err){
-    console.log("Error",err);
-  }
-  else {
-    console.log(result); 
-  }
+//  fs.writeFile("./abes.txt","We Code and Run it ",() => { });
+//  const result = fs.readFile("./abes.txt", "utf-8",(err,result) => {
+//   if(err){
+//     console.log("Error",err);
+//   }
+//   else {
+//     console.log(result); 
+//   }
+//  })
+//  fs.writeFileSync("./A1.txt", "We are in the A1 file ");
+//  const ans = fs.readFileSync("./A1.txt","utf-8");
+//  console.log(ans);
+//  fs.writeFile("./A2","We are in the A2 file ",()=>{ });
+//  const sop = fs.readFile("./A2.txt", "utf-8" , (err,sop) =>{
+//   if(err){
+//     console.log("Error" ,err);
+//   }
+//   else {
+//     console.log(result);
+//   }
+//  })
+ // ./ means current directory
+ fs.appendFileSync("./abes.txt",`PhD`);
+fs.appendFile("./A1.txt" ,`Anushka`,"utf-8",  (err) => {
+    if(err){
+      console.log("Error", err);
+    }
+    else {
+      console.log("File append SuccessFully");
+    }
  })
