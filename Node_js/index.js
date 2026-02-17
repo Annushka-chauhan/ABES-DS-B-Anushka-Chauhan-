@@ -41,7 +41,7 @@
 
 //FILE SYSTEM
 
- const fs= require('fs');
+ //const fs= require('fs');
 // //fs.writeFileSync("./abes.txt","Hello Abes ");
 
 //  const result = fs.readFileSync("./abes.txt","utf-8");
@@ -88,22 +88,32 @@
 
 
 //COPY FILE CONTENT
-fs.cpSync("./abes.txt","./A1.txt")
-fs.cp("./abes.txt" ,"./ds-b.txt", (err) =>{
-  if(err){
-    console.log("Error", err);
-  }
-  else {
-    console.log("Copied Successfully through async");
-  }
-})
+// fs.cpSync("./abes.txt","./A1.txt")
+// fs.cp("./abes.txt" ,"./ds-b.txt", (err) =>{
+//   if(err){
+//     console.log("Error", err);
+//   }
+//   else {
+//     console.log("Copied Successfully through async");
+//   }
+// })
 
 
-fs.unlinkSync("./abes.txt");
-fs.unlink('abes.txt', (err) => {
-    if (err) {
-        console.error('Error deleting file:', err);
-        return;
-    }
-    console.log('File deleted successfully');
-});
+// fs.unlinkSync("./abes.txt");
+// fs.unlink('abes.txt', (err) => {
+//     if (err) {
+//         console.error('Error deleting file:', err);
+//         return;
+//     }
+//     console.log('File deleted successfully');
+// });
+const os = require('os');
+const { CLIENT_RENEG_LIMIT } = require('tls');
+console.log("system platfoem", os.platform());
+console.log("user info",os.userInfo());
+console.log("cpu", os.arch());
+console.log("free", os.freemem());
+console.log("total memory", os.totalmem());
+console.log("uptime",os.uptime());
+console.log("homedir",os.homedir());
+console.log("host_name",os.hostname());
