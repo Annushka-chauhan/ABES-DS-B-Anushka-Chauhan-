@@ -97,3 +97,13 @@ fs.cp("./abes.txt" ,"./ds-b.txt", (err) =>{
     console.log("Copied Successfully through async");
   }
 })
+
+
+fs.unlinkSync("./abes.txt");
+fs.unlink('abes.txt', (err) => {
+    if (err) {
+        console.error('Error deleting file:', err);
+        return;
+    }
+    console.log('File deleted successfully');
+});
