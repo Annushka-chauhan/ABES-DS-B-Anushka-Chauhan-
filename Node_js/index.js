@@ -107,13 +107,21 @@
 //     }
 //     console.log('File deleted successfully');
 // });
-const os = require('os');
-const { CLIENT_RENEG_LIMIT } = require('tls');
-console.log("system platfoem", os.platform());
-console.log("user info",os.userInfo());
-console.log("cpu", os.arch());
-console.log("free", os.freemem());
-console.log("total memory", os.totalmem());
-console.log("uptime",os.uptime());
-console.log("homedir",os.homedir());
-console.log("host_name",os.hostname());
+// const os = require('os');
+// const { CLIENT_RENEG_LIMIT } = require('tls');
+// console.log("system platfoem", os.platform());
+// console.log("user info",os.userInfo());
+// console.log("cpu", os.arch());
+// console.log("free", os.freemem());
+// console.log("total memory", os.totalmem());
+// console.log("uptime",os.uptime());
+// console.log("homedir",os.homedir());
+// console.log("host_name",os.hostname());
+ const http = require('http');
+ const fs =require('fs');
+
+ const home = fs.readFileSync("./a.html");
+ const myServer = http.createServer((req,res) =>{
+          res.end(home);
+ })
+ myServer.listen(8000,() => console.log("server is run"));

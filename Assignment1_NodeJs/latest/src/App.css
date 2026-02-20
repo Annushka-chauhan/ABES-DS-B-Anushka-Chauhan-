@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: Arial;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  padding: 15px 40px;
+  background: #222;
+}
+
+.header a {
+  color: white;
+  margin-left: 20px;
+  text-decoration: none;
+}
+
+.logo {
+  color: white;
+  font-weight: bold;
+}
+
+.home {
+  display: flex;
+  gap: 40px;
+  padding: 50px;
+  align-items: center;
+}
+
+.home img {
+  width: 300px;
+}
+
+.work {
+  padding: 40px;
+}
+
+.buttons button {
+  margin: 10px;
+  padding: 10px 15px;
+  cursor: pointer;
+}
+
+.result {
+  background: #f4f4f4;
+  padding: 15px;
+  margin-top: 20px;
+}
